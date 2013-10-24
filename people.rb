@@ -30,12 +30,19 @@ class Instructor < Person
 	end
 
 	def say_greeting
-		super
+		super + @name + "!"
 	end
 
 end
 
 person = Person.new("name")
+
 student = Student.new("Cristina")
 puts student.say_greeting
 
+instructor = Instructor.new("Chris")
+puts instructor.say_greeting
+
+puts instructor.teach
+puts student.learn
+puts student.teach #This doesn't work because you're calling a method that doesn't exist within the student class. 
